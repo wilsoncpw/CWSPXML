@@ -2,10 +2,4 @@
     @testable import CWSPXML
 
     final class CWSPXMLTests: XCTestCase {
-        func testExample() {
-            // This is an example of a functional test case.
-            // Use XCTAssert and related functions to verify your tests produce the correct
-            // results.
-            XCTAssertEqual(CWSPXML().text, "Hello, World!")
-        }
     }
