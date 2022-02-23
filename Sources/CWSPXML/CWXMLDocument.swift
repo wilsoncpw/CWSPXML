@@ -64,7 +64,7 @@ public class CWXMLDocument: CWXMLNode {
         return elem
     }
     
-    @discardableResult public func setNewRootElement (name: String, attributes: [String: String]?, text: String?) -> CWXMLElement {
+    @discardableResult public func setNewRootElement (name: String, attributes: [String: String]? = nil, text: String?) -> CWXMLElement {
         let elem = CWXMLElement (name: name)
         elem.setAttributesAndNamespaces(attributes)
         elem.text = text
@@ -114,7 +114,7 @@ public class CWXMLDocument: CWXMLNode {
         return root.firstElement(forLocalName:name, namespaceURI:namespaceURI, recurse:recurse)
     }
     
-    @discardableResult public func addNewChildElement (parent: CWXMLElement, name: String, attributes: [String: String]?, text: String?) -> CWXMLElement {
+    @discardableResult public func addNewChildElement (parent: CWXMLElement, name: String, attributes: [String: String]? = nil, text: String?) -> CWXMLElement {
         let elem = CWXMLElement (name: name)
         elem.setAttributesAndNamespaces(attributes)
         elem.text = text
