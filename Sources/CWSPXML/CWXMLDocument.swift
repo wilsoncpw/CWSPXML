@@ -40,6 +40,9 @@ open class CWXMLDocument: CWXMLNode {
         self.url = url
     }
     
+    public func validate () throws {
+    }
+    
     func internalSetRootElement (elem: CWXMLElement) {
         rootElement = elem
         elem.parent = self

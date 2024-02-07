@@ -16,6 +16,7 @@ enum CWXMLParserError: Error {
     case documentNotStarted
     case prefixMappingNotStarted
     case noCurrentElement
+    case validationError (innerError: Error?)
 }
 
 public class CWXMLParser {
@@ -98,8 +99,15 @@ class CWXMLParserDelegate: NSObject, XMLParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: XMLParser) {
-        if _currentDocument == nil {
+        guard let _currentDocument else {
             p.handleError(.documentNotStarted)
+            return
+        }
+        
+        do {
+            try _currentDocument.validate()
+        } catch let e {
+            p.handleError(.validationError(innerError: e))
         }
     }
     
