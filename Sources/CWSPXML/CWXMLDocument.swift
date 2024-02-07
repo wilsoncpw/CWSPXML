@@ -40,7 +40,7 @@ open class CWXMLDocument: CWXMLNode {
         self.url = url
     }
     
-    public func validate () throws {
+    open func validate () throws {
     }
     
     func internalSetRootElement (elem: CWXMLElement) {
