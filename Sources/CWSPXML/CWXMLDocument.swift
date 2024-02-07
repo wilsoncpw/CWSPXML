@@ -14,7 +14,7 @@ import Foundation
 
 
 
-public class CWXMLDocument: CWXMLNode {
+open class CWXMLDocument: CWXMLNode {
     private (set) var comments = [CWXMLComment] ()
     private (set) var processingInstructions = [CWXMLProcessingInstruction] ()
     private (set) public var rootElement: CWXMLElement?
